@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -25,7 +26,7 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		//1. Use this online tool to make a maze image and drop it into your day5 package: http://pixlr.com/editor/
 		maze = ImageIO.read(getClass().getResource("maze.png"));
 		//2. set the mouse pointer to the start of your maze using:
-		new Robot().mouseMove(100, 50);
+		new Robot().mouseMove(90, 100);
 		
 		//3. add a mouse motion listener using:
 		addMouseMotionListener(this);
@@ -38,16 +39,26 @@ public class ScaryMaze extends JPanel implements Runnable, MouseMotionListener {
 		int mouseY = e.getY();
 		int mouseColor = maze.getRGB(mouseX, mouseY);
 		//4. print the mouseColor variable to see what color the mouse is touching
+		System.out.println(mouseColor);
 
 		//5. make a variable to hold the background color. 
+		int background = -1;
 
 		//6. if the mouse falls off the path (if it is on the background)
+		if (mouseColor == -1)
+			scare();
 		
 				// call the scare method
 		
 		//10. if the mouse is on the end color
-				
+		if (mouseColor == -11387959)
+			JOptionPane.showMessageDialog(null, "WON!");
 				// pop up a message to tell them they won
+		
+	}
+
+	private void println(int mouseColor) {
+		// TODO Auto-generated method stub
 		
 	}
 
