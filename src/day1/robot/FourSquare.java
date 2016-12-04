@@ -10,8 +10,6 @@ public class FourSquare {
 	
 
 	void go() {
-
-		JOptionPane.showMessageDialog(null, "Started!");
 		myRobot.setSpeed (10);
 		myRobot.setPenWidth(5);
 

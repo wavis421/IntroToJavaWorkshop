@@ -8,7 +8,7 @@ public class PentagonCrazy {
 
 	private void makePrettyThings() {
 
-		Robot myRobot = new Robot();
+		Robot myRobot = new Robot("batman");
 		myRobot.penDown();
 		myRobot.setSpeed(10);
 
